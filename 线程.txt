@@ -1,0 +1,28 @@
+okHttp 
+
+
+
+https://github.com/square/okhttp
+
+compile ‘com.squareup.okhttp3:okhttp:3.10.1’
+
+
+https://blog.csdn.net/fightingXia/article/details/70947701
+
+
+
+client.newCall(request).enqueue(new Callback() {。。。});
+
+一种是同步请求:同步请求在请求时需要开启子线程，请求成功后需要跳转到UI线程修改UI。 
+一种是异步请求:client.newCall(request).enqueue(new Callback() {onFailure    onResponse}
+
+get :  
+
+post :
+
+new OkHttpClient();先new  body   再new Request ,  request.post(body) ,  然后 client.newCall(Request)
+
+FromBody传递的是字符串型的键值对，RequestBody传递的传递Json或File对象  RequestBody.create(JSON, josnStr);
+MultipartBody同时传递键值对参数和File对象 new MultipartBody.Builder()
+        .setType(MultipartBody.FORM)
+        .addFormDataPart("groupId",""+groupId)//
